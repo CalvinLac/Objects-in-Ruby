@@ -2,7 +2,7 @@ def map_remake (arr)
    secondarr = []
    i = 0
    while i < arr.size
-       secondarr << (yield(arr[i]))
+       secondarr.push (yield(arr[i]))
        i+=1
    end
    secondarr
