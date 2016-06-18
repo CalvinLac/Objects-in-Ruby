@@ -1,14 +1,14 @@
-def each_remake (arr)
-	my_proc = Proc.new{|num| num.even?}
+def select_remake (arr)
    i = 0
    secondarr = []
    while i < arr.size
-		string = (yield(arr[i])) 
-		my_proc.call string 
-		secondarr.push string
+		if (yield(arr[i])) 
+		secondarr.push arr[i]
+	end
        i+=1
    end
    secondarr
 end
-select = each_remake([1,2,3,4]) { |n| n*5 }
+my_proc = Proc.new {|num| num.even?} #not too sure how to implement
+select = select_remake ([1,2,3,4]) {|num| num.even?}
 print select
