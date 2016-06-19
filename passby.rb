@@ -4,19 +4,19 @@ def deepdupe (my_arr)
 	i = 0
 	second_arr = []
 
-	while i > first_arr.size
-		first_arr.dup
-		second_arr.push first_arr.each
+	first_arr.each do |n|
+		second_arr.push n.dup 
+		
 	end 
 
 
 
 	nest = second_arr
-	print nest
-	print nest.object_id 
-	puts "hi"
-	puts nest[0].object_id	
-	puts my_arr[0].object_id
+	print "#{nest}\n"
+	puts "Object ID for my_arr is #{my_arr.object_id}"
+	puts "Object ID for nest is #{nest.object_id}"
+	puts "Object ID for nest[0] is #{nest[0].object_id}"	
+	puts "Object ID for my_arr[0] is #{my_arr[0].object_id}"
 
 
 end
