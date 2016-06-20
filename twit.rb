@@ -1,24 +1,30 @@
+require 'pry'
+
 class Twit 
 
 	def initialize
 		@tweets = []
 	end
+	attr_accessor :tweets 
 
-	def tweets(message)
+	def tweet(message) 
 		tweet_limit = 144
 		if message.size < tweet_limit
-			tweets = message
+			@tweets.push message
 		else
 			puts "invalid"
 		end
-		print tweets
-		return tweets
+		print @tweets 
+		 
 	end
 end
 
 calvin = Twit.new
 while true
-	calvin.tweets("hihi")
+	calvin.tweet("hihi")
+	calvin.tweet("bibi")
+	print @tweets
+	
 	break
 end 
 
