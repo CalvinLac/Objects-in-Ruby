@@ -19,17 +19,18 @@ class Twit
 	def tweet(message) 
 		tweet_limit = 144
 		if message.size < tweet_limit
-			puts "valid"
+			puts "Valid"
 			@tweets.push message
 		else
-			puts "invalid"
-			puts "your tweet was over the limit"
+			puts "Invalid"
+			puts "Your tweet was over the limit and will not be saved"
 		end 
 		print "currently all the tweets are #{@tweets}\n"		 
 	end
 
 	def display(tweetnumber) 
 		@tweets[tweetnumber]
+		puts "Tweet number #{tweetnumber} is #{@tweets[tweetnumber]}"
 	end
 end
 
@@ -41,7 +42,7 @@ while true
 	calvin.tweet("zizi")
 	calvin.tweet("qiqi")
 	calvin.tweet("sjflkjslsjflkjslfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfjfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfj")
-	puts calvin.display(1)
+	calvin.display(1)
 	calvin.each{ |msg| print [msg.upcase]}
 	puts " "
 	calvin.map { |msg| print [msg.capitalize]}
