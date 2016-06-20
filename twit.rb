@@ -37,8 +37,14 @@ calvin = Twit.new
 while true
 	calvin.tweet("hihi")
 	calvin.tweet("bibi")
+	calvin.tweet("lili")
+	calvin.tweet("zizi")
+	calvin.tweet("qiqi")
 	calvin.tweet("sjflkjslsjflkjslfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfjfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfj")
-	calvin.map{ |msg| print [msg.upcase]}
+	puts calvin.display(1)
+	calvin.each{ |msg| print [msg.upcase]}
+	puts " "
+	calvin.map { |msg| print [msg.capitalize]}
 	break
 end 
 
