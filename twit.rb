@@ -2,10 +2,19 @@ require 'pry'
 
 class Twit 
 
+	include Enumerable 
+
 	def initialize
 		@tweets = []
 	end
 	attr_accessor :tweets 
+
+	def each(&block)
+		@tweets.each do |tweets|
+			block.call(tweets)
+	end 
+			
+		end
 
 	def tweet(message) 
 		tweet_limit = 144
@@ -29,7 +38,7 @@ while true
 	calvin.tweet("hihi")
 	calvin.tweet("bibi")
 	calvin.tweet("sjflkjslsjflkjslfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfjfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfjsjflkjslfjsaldkfjslkfjsldfjslkfj")
-	puts calvin.display(1)
+	calvin.map{ |msg| print [msg.upcase]}
 	break
 end 
 
