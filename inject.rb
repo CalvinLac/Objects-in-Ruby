@@ -1,19 +1,17 @@
 #WIP
-
-
 def inject_remake (arr)
-   i = 0
-   last_result = 0
-   secondarr = []
-   new_result = 0 
-   
-   while i < arr.size
-	    (yield(arr[i]))
-      arr.shift
+  i = 0
+  last_result = 0
+  secondarr = []
+  new_result = 0 
 
-       i+=1
-   end 
-	arr
+  while i < arr.size
+	  (yield(arr[i]))
+    arr.shift
+
+    i+=1
+  end 
+  arr
 end
 
  #not too sure how to implement proc 

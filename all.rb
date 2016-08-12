@@ -1,17 +1,19 @@
 def all_remake (arr)
-   i = 0
+  i = 0
 
-   secondarr = []
+  secondarr = []
    
-   while i < arr.size
-		if (yield(arr[i])) == true
-			secondarr.push arr[i]
-		end			
-       i+=1
-   end
-   if secondarr.size != arr.size
-   		secondarr = []
-    end 
+  while i < arr.size
+
+	  if (yield(arr[i])) == true
+      secondarr.push arr[i]
+	  end			
+       
+    i+=1
+  end
+  if secondarr.size != arr.size
+   	secondarr = []
+  end 
 	secondarr  
 end
 
